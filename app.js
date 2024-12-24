@@ -9,6 +9,8 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],  // הגדרת שיטות HTTP מותרות
   allowedHeaders: ['Content-Type', 'Authorization']  // הגדרת כותרות מותרות
 }));
+// טיפול בבקשות OPTIONS
+app.options('*', cors());
 const routs_managment=require('./routes/routs_managment');
 let port=(process.env.PORT).toString()|"3000"
 console.log(process.env.PORT);
