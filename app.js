@@ -5,7 +5,7 @@ const app=express();
 const mongoose=require('./db/mongoose');
 const cors = require('cors');
 app.use(cors({
-  origin: 'https://angular-mongo.onrender.com', // Your Angular app's origin
+  origin: 'https://yael-ajami.onrender.com', // Your Angular app's origin
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
