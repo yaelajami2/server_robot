@@ -5,12 +5,13 @@ const app=express();
 const mongoose=require('./db/mongoose');
 const cors = require('cors');
 app.use(cors({
-  origin: ['https://yael-ajami.onrender.com','http://localhost:4200'],  // אין סלאש בסוף
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],  // הגדרת שיטות HTTP מותרות
-  allowedHeaders: ['Content-Type', 'Authorization']  // הגדרת כותרות מותרות
+  origin: 'https://angular-mongo.onrender.com', // Your Angular app's origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
-// טיפול בבקשות OPTIONS
-app.options('*', cors());
+
+// Or allow all origins (less secure, use with caution)
+app.use(cors());
 const routs_managment=require('./routes/routs_managment');
 let port=(process.env.PORT).toString()|"3000"
 console.log(process.env.PORT);
