@@ -5,7 +5,7 @@ const app=express();
 const mongoose=require('./db/mongoose');
 const cors = require('cors');
 app.use(cors({
-  origin: 'https://yael-ajami.onrender.com',  // אין סלאש בסוף
+  origin: ['https://yael-ajami.onrender.com','http://localhost:4200'],  // אין סלאש בסוף
   methods: ['GET', 'POST', 'PUT', 'DELETE'],  // הגדרת שיטות HTTP מותרות
   allowedHeaders: ['Content-Type', 'Authorization']  // הגדרת כותרות מותרות
 }));
